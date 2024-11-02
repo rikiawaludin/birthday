@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modal</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to bottom, #ffecd2, #fcb69f);
+      }
+      #popup-content {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+      #name-input {
+        padding: 10px;
+        width: 80%;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin-bottom: 10px;
+      }
+      #submit-button {
+        padding: 10px 15px;
+        background-color: #ff6f61;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="popup-content">
+      <p>masukkin nama kamu ya!😎</p>
+      <input type="text" id="name-input" placeholder="Nama" required />
+      <button id="submit-button" onclick="submitName()">OK</button>
+    </div>
+
+    <script>
+      function submitName() {
+        const nameInput = document.getElementById("name-input").value;
+        if (nameInput) {
+          localStorage.setItem("userName", nameInput);
+          window.location.href = "birthday.html";
+        }
+      }
+    </script>
+  </body>
+</html>
